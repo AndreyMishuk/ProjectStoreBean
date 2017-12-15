@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>#{msg.welcom_title}</title>
+        <h:outputStylesheet library="css" name="style_index.css"/>
+    </h:head>
+    <h:body>
+        <div class="main">
+
+            <div class="content">
+                <br/>Hello from Facelets
+            </div>
+
+            <div class="login_div">
+                <h:form>
+                    #{msg.user_input}
+                    <h:inputText id="userName" value="#{users.userName}" required="true" requiredMessage="#{msg.login_length_error}">
+                        <f:validator validatorId="net.service.projectstorebeans.web.validator.LoginValidator"/>
+                    </h:inputText>
+                    <h:commandButton action="pages/hello.html?faces-redirect=true" value="input"/>
+                    <p><h:message for="username" styleClass="error"</p>
+                </h:form>
+            </div>
+            
+            <div class="footer">
+                #{msg.author_info}
+            </div>
+            
+        </div>
+    </h:body>
+</html>
+
