@@ -5,4 +5,4 @@ webstore,system of purchases and orders of goods.
 * JPA
 * CDI
 * JSF
-  DB - MySQL 5
+* DB - MySQL 5
