@@ -1,5 +1,5 @@
-# ProjectStoreBean # - ###webstore,system of purchases and orders of goods.###
-## Used technologies:## 
+# ProjectStoreBean ###webstore,system of purchases and orders of goods.
+## Used technologies:
 * EJB
 * JPA
 * CDI
