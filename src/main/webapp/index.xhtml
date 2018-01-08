@@ -20,7 +20,7 @@
                     <h:inputText id="userName" value="#{users.userName}" required="true" requiredMessage="#{msg.login_length_error}">
                         <f:validator validatorId="net.service.projectstorebeans.web.validator.LoginValidator"/>
                     </h:inputText>
-                    <h:commandButton action="pages/hello.html?faces-redirect=true" value="input"/>
+                    <h:commandButton action="pages/store.xhtml?faces-redirect=true" value="input"/>
                     <p><h:message for="userName" styleClass="error"/></p>
                 </h:form>
             </div>

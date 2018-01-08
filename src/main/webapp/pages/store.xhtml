@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Store</title>
     </h:head>
@@ -11,9 +12,52 @@
             <ui:define name="title">
                 main
             </ui:define>
+            <ui:define name="right_menu">
+                <h4>Total quantity of category #{categoryController.caunt()}</h4>
+                <h:form>
+                    <h:dataTable value="#{categoryController.getAll()}" var="category">
+                        <h:column>
+                            <f:facet name="header">Category</f:facet>
+                            <h:commandLink value="#{category.name}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
+            </ui:define>
             <ui:define name="content">
-                Context
-                <h:graphicImage library="img" name="search.png"/>
+                <h3>Total quantity of goods #{productController.count()}</h3>
+                <h:form>
+                    <h:dataTable value="#{productController.getAll()}" var="product">
+                        <h:column>
+                            <f:facet name="header">ID</f:facet>
+                                #{product.id}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Title</f:facet>
+                                #{product.title}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Description</f:facet>
+                                #{product.description}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Quantity</f:facet>
+                                #{product.quantity}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Price</f:facet>
+                                #{product.price}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Availability</f:facet>
+                                #{product.availability}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Producer</f:facet>
+                                #{product.producerId.title}
+                        </h:column>
+                        
+                    </h:dataTable>
+                </h:form>
             </ui:define>
         </ui:composition>
     </h:body>

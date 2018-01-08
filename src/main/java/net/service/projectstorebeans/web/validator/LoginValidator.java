@@ -1,8 +1,6 @@
 package net.service.projectstorebeans.web.validator;
 
 import java.util.ResourceBundle;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
@@ -41,15 +39,6 @@ public class LoginValidator implements Validator {
         }
 
     }
-
-//    private Boolean chekFirstLiteral(String str) {
-//
-//        String firstSymbol = "" + str.charAt(0);
-//        Pattern pattern = Pattern.compile("(\\W|\\d|_)");
-//        Matcher matcher = pattern.matcher(firstSymbol);
-//
-//        return matcher.matches();
-//    }
 
     private Boolean chekNameIsCorect(String str) {
 
