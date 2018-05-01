@@ -12,6 +12,7 @@ public class ProducerBean implements Serializable {
     private Integer id;
     private String title;
     private String description;
+    private Integer quantity;
     private byte[] logotip;
 
     public ProducerBean() {
@@ -48,7 +49,13 @@ public class ProducerBean implements Serializable {
     public void setLogotip(byte[] logotip) {
         this.logotip = logotip;
     }
-    
-    
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
     
 }

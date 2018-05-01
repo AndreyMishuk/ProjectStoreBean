@@ -1,7 +1,6 @@
 
 package net.service.projectstorebeans.beansController;
 
-import javax.ejb.DependsOn;
 import javax.ejb.Lock;
 import javax.ejb.LockType;
 import javax.ejb.Singleton;
@@ -11,7 +10,6 @@ import net.service.projectstorebeans.beansCDI.Message;
 
 @Named
 @Singleton
-//@DependsOn("Message")
 public class AdminController {
     
     @Inject
@@ -23,5 +21,8 @@ public class AdminController {
         return "/pages/admin_page";
     }
     
+    public String getReturn() {
+        return "/pages/store";
+    }
     
 }

@@ -29,5 +29,25 @@ public class ProducerConrtroller implements Serializable {
         return producerFacade.count();
     }
     
+    public String add() {
+        
+        Producer producer = new Producer();
+        
+        producer.setTitle(producerBean.getTitle());
+        producer.setDescription(producerBean.getDescription());
+        producer.setQuantity(producerBean.getQuantity());
+        producer.setLogotip(producerBean.getLogotip());
+        
+        producerFacade.create(producer);
+        
+        return "/pages/admin_page";
+        
+    }
+    
+    public String edit() {
+        
+        
+        return "";
+    }
     
 }

@@ -8,7 +8,6 @@ import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import net.service.projectstorebeans.entity.Category;
 import net.service.projectstorebeans.entity.Product;
 import net.service.projectstorebeans.session.ProductFacade;
 
@@ -28,6 +27,29 @@ public class ProductController implements Serializable {
     
     public int count() {
         return productFaced.count();
+    }
+    
+    public String edit(Product product) {
+        
+        productBean.setId(product.getId());
+        productBean.setTitle(product.getTitle());
+        productBean.setPrice(product.getPrice());
+        
+        return "/pages/edit/product_edit";
+        
+    }
+    
+    public String save() {
+        
+        Product product = new Product();
+        
+        product.setId(productBean.getId());
+        product.setTitle(productBean.getTitle());
+        product.setPrice(productBean.getPrice());
+        
+        productFaced.edit(product);
+        
+        return "/pages/edit/product_edit";
     }
     
    
