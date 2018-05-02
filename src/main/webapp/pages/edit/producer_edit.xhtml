@@ -5,29 +5,25 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Edit product</title>
+        <title>Edit producer </title>
     </h:head>
     <h:body>
         <h:form>
             <p:panelGrid columns="2">
-                <!--                <p:dataTable >-->
                 <p:column>
                     <f:facet name="header">ID</f:facet>
-                    <h:outputText value="#{productBean.id}"/>
+                    <h:outputText value="#{producerBean.id}"/>
                 </p:column>
                 <p:column>
                     <f:facet name="header">Title</f:facet>
-                    <p:inputText value="#{productBean.title}"/>
+                    <p:inputText value="#{producerBean.title}"/>
                 </p:column>
                 <p:column>
-                    <f:facet name="header">Price</f:facet>
-                    <p:inputText value="#{productBean.price}"/>
+                    <f:facet name="header">Description</f:facet>
+                    <p:inputText value="#{producerBean.description}"/>
                 </p:column>
-
-                <!--</p:dataTable >-->
-
             </p:panelGrid>
-            <p:commandButton value="Save" action="#{productController.save()}"/>
+            <p:commandButton value="Save" action="#{producerConrtroller.save()}"/>
         </h:form>
     </h:body>
 </html>

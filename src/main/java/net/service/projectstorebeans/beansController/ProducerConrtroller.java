@@ -44,8 +44,22 @@ public class ProducerConrtroller implements Serializable {
         
     }
     
-    public String edit() {
+    public String edit(Producer producer) {
         
+        producerBean.setId(producer.getId());
+        producerBean.setDescription(producer.getDescription());
+        producerBean.setTitle(producer.getTitle());
+        
+        return "/pages/edit/producer_edit";
+    }
+    
+    public String save() {
+        
+        Producer producer = new Producer();
+        
+        producer.setId(producerBean.getId());
+        producer.setDescription(producerBean.getDescription());
+        producer.setTitle(producerBean.getTitle());
         
         return "";
     }
